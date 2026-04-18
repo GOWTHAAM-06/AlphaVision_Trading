@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from analyzer.views import get_market_data
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/market-data/', get_market_data),
 ]
