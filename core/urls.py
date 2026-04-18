@@ -14,11 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
-from analyzer.views import get_market_data
+from analyzer.views import get_market_data, api_home, get_trade_signal # Added get_trade_signal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/market-data/', get_market_data),
+    path('api/signal/', get_trade_signal), # The new Brain endpoint
+    path('', api_home),
 ]
